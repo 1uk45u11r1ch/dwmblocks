@@ -2,7 +2,7 @@
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 
-	{" [ VLM: ",    "echo \"$(pamixer --get-volume-human) ]\"",                                             1,              1},
+	{" [ VLM: ",    "printf %3s \"$(pamixer --get-volume-human)\"; echo \" ]\"",				1,              1},
 	{"[ TME: ",	"echo \"$(date '+%k:%M %d.%m.%Y') ]\"",							1,		0},
 	{"[ CPU: ",	"echo \"$(cat /run/cpustatsd/load)% ]\"",						1,		0},
 	{"[ CLK: ",	"echo \"$(cat /run/cpustatsd/maxclk)MHz | $(cat /run/cpustatsd/minclk)MHz ]\"",		1,		0},
