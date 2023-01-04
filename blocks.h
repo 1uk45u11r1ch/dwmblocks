@@ -7,6 +7,7 @@ static const Block blocks[] = {
 	{"[ CPU: ",	"echo \"$(cat /run/cpustatsd/load)%\" ]",						1,		0},
 	{"[ CLK: ",	"echo \"$(cat /run/cpustatsd/maxclk)MHz | $(cat /run/cpustatsd/minclk)MHz\" ]",		1,		0},
 	{"[ MEM: ",	"echo $(free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g) ]",			1,		0},
+	{"[ PWR: ",	"echo \"$(cat /run/cpustatsd/corpwr)W | $(cat /run/cpustatsd/pkgpwr)W\" ]",		1,		0},
 	{";",		"",											86400,		0}, /* dwm-extrabar delimeter */
 	{";",		"",											86400,		0}, /* dwm-extrabar delimeter */
 };
